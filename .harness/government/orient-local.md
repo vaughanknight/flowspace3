@@ -15,7 +15,7 @@ Upstream owns product direction (its PRD, rulings, prime pij-spatial-skink on Jo
 - Conventional commits are binding (release-please). Behavioural changes need tests that fail without them.
 - CONTRIBUTING: "For anything substantial, open an issue first". Outward-facing acts (issue, PR) need Vaughan's go.
 - Dogfood: `flowspace3 search` before grep; report friction with `harness observe`.
-- Never stop, reconfigure or re-root the running 0.7.0 daemon (:7373, db :5433). It serves dodo-gogo and live-transcripts.
+- Never stop, reconfigure or re-root the running 0.7.0 daemon (:7373, LIVE db container flowspace3-db on host :5434 via Vaughan's override; :5433 is nexus-db-test, also off-limits). It serves dodo-gogo and live-transcripts.
 - Never touch `~/GitHub/flowspace3/docker-compose.override.yml` (Vaughan's untracked file) or that checkout's `main`.
 - PRD reconciliation owner: n/a (upstream owns its PRD); the o-prime reconciles our plan receipts.
 
@@ -26,7 +26,7 @@ Upstream owns product direction (its PRD, rulings, prime pij-spatial-skink on Jo
 | Worktree root / naming | `~/GitHub/fs3-<ord>-<slug>`, branch `<ord>-<slug>` |
 | Base | freshly fetched `origin/main` |
 | Push / PR | push branch to `fork`; PR `vaughanknight:<branch>` → `AI-Substrate:main` only after Vaughan's go |
-| Batons | test Postgres (compose test service :5434) if two seats run `cargo test` at once; Azure spend |
+| Batons | test Postgres: per-stream compose project + private host port (e.g. -p fs3-s020, :5444); never :5433/:5434; Azure spend |
 | Never-stage | `the-flow.json`, `the-flow.md` (harness CLI only), `target/` |
 | Human channel | live-transcripts dashboard folder `flowspace3` (chat-ask pointers) + this pane |
 

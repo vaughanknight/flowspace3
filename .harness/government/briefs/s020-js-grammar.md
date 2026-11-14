@@ -26,7 +26,7 @@ Canonical: `pij fence show --stream flowspace3-vk:js-grammar`.
 - Shared (touch only if the add-language skill's classify rule demands it): `crates/core/src/classify.rs`
 - Scratch: `.harness/temp/s020-js-grammar/**`
 - Hard exclusions: `~/GitHub/flowspace3` main checkout (and its untracked `docker-compose.override.yml`), `~/GitHub/flowspace3-gov`, `the-flow.json`/`the-flow.md` (harness CLI only), `~/GitHub/dodo-gogo` (read-only).
-- **Never** stop, restart, reconfigure or re-root the running flowspace3 0.7.0 daemon (:7373, db container :5433); it serves Vaughan's other repos. Test builds use their own ports/DBs/config dirs (`./target/...`, not `~/.local/bin/flowspace3`).
+- **Never** stop, restart, reconfigure or re-root the running flowspace3 0.7.0 daemon (:7373, LIVE db on host :5434; :5433 is nexus-db-test, also off-limits); it serves Vaughan's other repos. Test builds use their own ports/DBs/config dirs (`./target/...`, not `~/.local/bin/flowspace3`).
 - New path outside the fence: tell the o-prime and continue.
 
 ## Orient stack
