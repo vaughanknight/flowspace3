@@ -1,0 +1,29 @@
+docs/plans/020-js-grammar/assets/tasks/phase-1/execution.log.md
+  s_cd650105ea88d0::t_5ce8452e3a3478 241-279
+crates/parsers/tests/fixture_elements.rs
+  s_cd650105ea88d0::t_3250b89457d2cb 187,193-215,265
+docs/plans/020-js-grammar/assets/pr-body.md
+  s_cd650105ea88d0::t_5ce8452e3a3478 45-46
+  s_cd650105ea88d0::t_3250b89457d2cb 66-72
+crates/parsers/fixtures/sample.js
+  s_cd650105ea88d0::t_3250b89457d2cb 16-17,42
+crates/parsers/src/source.rs
+  s_cd650105ea88d0::t_4789a85133d461 347-348
+  s_cd650105ea88d0::t_6d60863434d3bc 331
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "4d49d57a81876615ea65928f8da87b9ffc21253d",
+  "prompts": {},
+  "sessions": {
+    "s_cd650105ea88d0": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "9af0d4f4-84b8-454e-bdae-0c461c285e17",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Vaughan Knight <vaughan@vaughanknight.com>"
+    }
+  }
+}
