@@ -1,0 +1,25 @@
+docs/plans/020-js-grammar/assets/validation/validate-v2-2c06fad.md
+  s_0873adff2a404d::t_8e448fa8cb1b59 1-43
+docs/plans/020-js-grammar/assets/validation/validate-v2-f935d39.md
+  s_0873adff2a404d::t_6276af9152bd83 1-29
+docs/plans/020-js-grammar/plan.dd.json
+  s_0873adff2a404d::t_ac4038e8098e06 206
+docs/plans/020-js-grammar/plan.dd.md
+  s_0873adff2a404d::t_a1f7e4f77453b9 140
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "a421d76e40dd25df60b3d3f4474ba386a9ec7867",
+  "prompts": {},
+  "sessions": {
+    "s_0873adff2a404d": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "ccf5bbda-931e-42db-b9bc-60e850b8e826",
+        "model": "claude-opus-5.5"
+      },
+      "human_author": "Vaughan Knight <vaughan@vaughanknight.com>"
+    }
+  }
+}
