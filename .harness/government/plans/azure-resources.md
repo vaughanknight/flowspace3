@@ -35,3 +35,25 @@ Switching the running daemon from fake providers to these (config + daemon resta
 
 ## Commands (run only after go)
 az provider register -n Microsoft.CognitiveServices; az group create; az cognitiveservices account create --custom-domain aoai-fs3-vk --kind OpenAI --sku S0 (then disableLocalAuth); two `az cognitiveservices account deployment create`; `az role assignment create --role "Cognitive Services OpenAI User"`.
+
+## DEPLOYED 2026-11-14 ~15:00 AEDT (Vaughan go "Go, gpt-5-mini", spine 106983)
+- Provider registered; `rg-flowspace3-vk` (australiaeast); `aoai-fs3-vk` S0, endpoint https://aoai-fs3-vk.openai.azure.com/, disableLocalAuth=true.
+- Deployments: `text-embedding-3-small` (v1, Standard, 120K TPM), `gpt-5-mini` (2025-08-07, GlobalStandard, 100K TPM).
+- Role: Cognitive Services OpenAI User → oid d5cf3396… (vknight), scope = account.
+- Smoke (Entra token, az login): embeddings api 2024-02-01 dims=1024 → 1024-length vector; chat api 2024-12-01-preview max_completion_tokens → "ok".
+
+## Config for the switch (NOT applied; needs Vaughan's separate go — restarts daemon + full reindex)
+```toml
+[providers.aoai-embed]
+kind = "azure_openai"
+endpoint = "https://aoai-fs3-vk.openai.azure.com"
+deployment = "text-embedding-3-small"
+api_version = "2024-02-01"
+dimensions = 1024
+[providers.aoai-chat]
+kind = "azure_openai"
+endpoint = "https://aoai-fs3-vk.openai.azure.com"
+deployment = "gpt-5-mini"
+api_version = "2024-12-01-preview"
+```
+(Exact `kind` spelling and how roles bind embedder/summarizer to these names must be checked against `fs3_core::config` and `flowspace3 config show` before applying.)
